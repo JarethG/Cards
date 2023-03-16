@@ -25,15 +25,20 @@ class GameView: View {
     private val handler = Handler();
     private val runnable = Runnable { invalidate() }
     private val paint = Paint()
+    private val deck = Deck(arrayOf(heart,spade,diamond,club))
 
-    private var card = Card("diamonds",4,diamond)
+    private var card = deck.getNext();
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
         paint.style = Paint.Style.FILL
         card.drawCard(canvas,paint)
         handler.postDelayed(runnable, 100)
     }
-    fun setCard(int: Int) {
-        card = Card("diamonds", 1.coerceAtLeast(card.value + int).coerceAtMost(10),diamond)
+    fun setCard(i: Int) {
+        card = if(i>0)
+            deck.getNext()
+        else
+            deck.getPrevious()
+//        card = Card("diamonds", 1.coerceAtLeast(card.value + int).coerceAtMost(10),diamond)
     }
 }
