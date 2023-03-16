@@ -1,9 +1,11 @@
-package com.example.mycards
+package com.example.mycards.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.mycards.GameView
+import com.example.mycards.R
 
 class ShuffledDeck : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

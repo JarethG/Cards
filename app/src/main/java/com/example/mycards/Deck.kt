@@ -33,4 +33,8 @@ class Deck constructor(val images: Array<Bitmap>) {
             position--;
         return cards[position];
     }
+
+    public fun shuffle() {
+        cards.shuffle()
+    }
 }

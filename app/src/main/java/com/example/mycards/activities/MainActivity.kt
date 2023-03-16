@@ -1,10 +1,12 @@
-package com.example.mycards
+package com.example.mycards.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.widget.Button
+import com.example.mycards.Constants
+import com.example.mycards.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

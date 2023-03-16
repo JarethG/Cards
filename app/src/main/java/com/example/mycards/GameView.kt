@@ -25,9 +25,16 @@ class GameView: View {
     private val handler = Handler();
     private val runnable = Runnable { invalidate() }
     private val paint = Paint()
-    private val deck = Deck(arrayOf(heart,spade,diamond,club))
 
-    private var card = deck.getNext();
+    private val deck : Deck = Deck(arrayOf(heart,spade,diamond,club))
+    private var card:Card;
+    init{
+        deck.shuffle()
+        card = deck.getNext();
+    }
+
+
+
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
         paint.style = Paint.Style.FILL
