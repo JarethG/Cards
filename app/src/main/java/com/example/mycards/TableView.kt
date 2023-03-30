@@ -6,8 +6,7 @@ import android.graphics.Color.rgb
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
-import com.example.mycards.Constants.SCREEN_HEIGHT
-import com.example.mycards.Constants.SCREEN_WIDTH
+import com.example.mycards.Constants.*
 
 class TableView : View {
     private val handler = Handler();
@@ -16,13 +15,11 @@ class TableView : View {
 
 
     private val deck : Deck = Deck(150, resources)
-    private var card:Card;
     private val hand : Hand = Hand(100f, SCREEN_HEIGHT*.6f, SCREEN_WIDTH-200f,250f)
     constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
 
     init {
         deck.shuffle()
-        card = deck.getNext();
         hand.addCard(deck.getNext())
         hand.addCard(deck.getNext())
         hand.addCard(deck.getNext())
@@ -33,7 +30,6 @@ class TableView : View {
         super.draw(canvas)
         drawBackGround(canvas)
         drawOutlines(canvas)
-        card.drawCard(canvas,paint)
         hand.draw(canvas,paint)
         handler.postDelayed(runnable, 100)
     }
@@ -46,5 +42,6 @@ class TableView : View {
 
     private fun drawOutlines(canvas: Canvas) {
         hand.drawBounds(canvas,paint)
+        canvas.drawRect(SCREEN_WIDTH/2f- cardWidth/2,300f, SCREEN_WIDTH/2f + cardWidth/2,300f + cardHeight,paint)
     }
 }

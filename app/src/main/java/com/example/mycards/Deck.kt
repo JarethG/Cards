@@ -3,7 +3,7 @@ package com.example.mycards
 import android.content.res.Resources
 import android.graphics.*
 
-class Deck(private val deckWidth: Int, resources: Resources) {
+class Deck( deckWidth: Int, resources: Resources) {
 
     private val suits: Bitmap = Bitmap.createScaledBitmap(
         BitmapFactory.decodeResource(resources,R.drawable.suitsclear),
@@ -27,7 +27,7 @@ class Deck(private val deckWidth: Int, resources: Resources) {
         for (s in 0 until 4) {
             for (i in 0 until 13)
                 cards.add(
-                    Card(suits[s], i + 1, images[s],deckWidth)
+                    Card(suits[s], i + 1, images[s])
                 )
         }
     }

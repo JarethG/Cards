@@ -4,6 +4,10 @@ public class Constants {
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
 
+    public static int genericScale = 150;
+    public static float cardWidth = genericScale*2.5f;
+    public static float cardHeight = genericScale*3.5f;
+
     public static double[][] layoutX= new double[][]{{.5},{.5,.5},{.5,.5,.5},{.2,.8,.2,.8},{.2,.8,.2,.8,.5},
             {.2,.8,.2,.8,.2,.8},{.2,.8,.5,.2,.8,.2,.8},{.2,.8,.2,.8,.2,.8,.2,.8},{.2,.8,.5,.2,.8,.2,.8,.2,.8}
             ,{.2,.8,.5,.2,.8,.2,.8,.5,.2,.8}};

@@ -11,7 +11,7 @@ class Hand(val x:Float, val y:Float, val width:Float, val height: Float) {
     fun draw(canvas: Canvas, paint: Paint) {
         val dx = width/cards.size
         for(i in 0 until cards.size){
-            cards.get(i).draw(canvas,paint,x+dx*i,y)
+            cards[i].draw(canvas,paint,x+dx*i,y)
         }
     }
 

@@ -26,12 +26,10 @@ class GameView: View {
         card = deck.getNext();
     }
 
-
-
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
         paint.style = Paint.Style.FILL
-        card.drawCard(canvas,paint)
+        card.draw(canvas,paint, SCREEN_WIDTH/2f,300f)
         handler.postDelayed(runnable, 100)
     }
     fun setCard(i: Int) {
