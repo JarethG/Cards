@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MyCards"
         tools:targetApi="31">
         <activity
+            android:name=".activities.StandardPlay"
+            android:exported="false" />
+        <activity
             android:name=".activities.ShuffledDeck"
             android:exported="false" />
         <activity

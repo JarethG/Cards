@@ -1,6 +1,7 @@
 package com.example.mycards.activities
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -16,11 +17,13 @@ class MainActivity : AppCompatActivity() {
         this.windowManager.defaultDisplay.getMetrics(displayMetrics);
         Constants.SCREEN_WIDTH = displayMetrics.widthPixels
         Constants.SCREEN_HEIGHT = displayMetrics.heightPixels
-        configureStartButton()
+        configureStartButtons()
     }
 
-    private fun configureStartButton() {
-        val start = findViewById<Button>(R.id.b1)
-        start.setOnClickListener { startActivity(Intent(this, ShuffledDeck::class.java)) }
+    private fun configureStartButtons() {
+        val shuffle = findViewById<Button>(R.id.b1)
+        shuffle.setOnClickListener { startActivity(Intent(this, ShuffledDeck::class.java)) }
+        val standard = findViewById<Button>(R.id.b2)
+        standard.setOnClickListener { startActivity(Intent(this, StandardPlay::class.java)) }
     }
 }
