@@ -47,4 +47,8 @@ class Deck( deckWidth: Int, resources: Resources) {
     public fun shuffle() {
         cards.shuffle()
     }
+
+    fun empty():Boolean{
+        return cards.isEmpty()
+    }
 }

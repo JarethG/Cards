@@ -3,6 +3,8 @@ package com.example.mycards
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.graphics.Rect
+import android.view.MotionEvent
 
 class Hand(val x:Float, val y:Float, val width:Float, val height: Float) {
 
@@ -23,5 +25,18 @@ class Hand(val x:Float, val y:Float, val width:Float, val height: Float) {
 
     fun addCard(card:Card) {
         cards.add(card)
+    }
+
+    fun getBounds():Rect{
+        return Rect(x.toInt(), y.toInt(), (x+width).toInt(), (y+ height).toInt())
+    }
+
+    fun getCard(ex:Float,ey:Float):Card{
+        val cardIndex = ((ex-this.x)/(width/cards.size)).toInt()
+        return cards.removeAt(cardIndex)
+    }
+
+    fun isEmpty(): Boolean {
+        return cards.isEmpty()
     }
 }

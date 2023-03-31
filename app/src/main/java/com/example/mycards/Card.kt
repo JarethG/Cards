@@ -69,4 +69,8 @@ class Card(val type:String, private val trueValue:Int, private val image: Bitmap
         }
     }
 
+    override fun toString(): String {
+        return "$value | $type"
+    }
+
 }
